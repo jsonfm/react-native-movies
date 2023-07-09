@@ -3,6 +3,7 @@ import { Foundation } from "@expo/vector-icons";
 import { Feather } from "@expo/vector-icons";
 import { StatusBar } from "expo-status-bar";
 import { TrendingMoviesCarousel } from "@/components/TrendingMoviesCarousel";
+import { MoviesList } from "@/components/MoviesList";
 
 const ios = Platform.OS == "ios";
 const Home = () => {
@@ -25,6 +26,7 @@ const Home = () => {
             <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 10 }}>
                 <TrendingMoviesCarousel movies={[1, 2, 3]} />
             </ScrollView>
+            <MoviesList />
         </View>
     );
 };

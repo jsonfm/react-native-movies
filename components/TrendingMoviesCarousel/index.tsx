@@ -16,7 +16,8 @@ export const MovieCard = ({ movie }: MovieCardProps) => {
             <ImageBackground
                 source={{ uri: "https://m.media-amazon.com/images/I/81F5PF9oHhL._AC_UF894,1000_QL80_.jpg" }}
                 resizeMode="cover"
-                style={{ width: width * 0.6, height: height * 0.4, borderRadius: 20 }}
+                style={{ width: width * 0.6, height: height * 0.4 }}
+                className="border-8 border-white"
             />
         </TouchableWithoutFeedback>
     );

@@ -4,8 +4,9 @@
         "strict": true,
         "baseUrl": ".",
         "paths": {
-            "@/": ["./*"],
-            "@/components": ["components/*"]
+            "@/components/*": ["./components/*"]
         }
-    }
+    },
+    "include": ["./**/*.ts", "./**/*.d.ts", "./**/*.tsx"],
+    "exclude": ["node_modules", "dist"]
 }
