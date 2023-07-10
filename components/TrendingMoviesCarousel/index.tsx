@@ -1,4 +1,4 @@
-import { useNavigation } from "expo-router";
+import { useNavigation, useRootNavigation, useRouter } from "expo-router";
 import { View, Text, ImageBackground, TouchableWithoutFeedback, Dimensions } from "react-native";
 import Carousel from "react-native-snap-carousel";
 
@@ -9,15 +9,18 @@ interface MovieCardProps {
 const { width, height } = Dimensions?.get("window");
 
 export const MovieCard = ({ movie }: MovieCardProps) => {
-    const navigation = useNavigation();
-    const handlePress = () => {};
+    const navigation = useRootNavigation();
+    const handlePress = () => {
+        const route = ["movie", { movie }];
+        navigation?.navigate(...(route as never));
+    };
     return (
         <TouchableWithoutFeedback onPress={handlePress}>
             <ImageBackground
                 source={{ uri: "https://m.media-amazon.com/images/I/81F5PF9oHhL._AC_UF894,1000_QL80_.jpg" }}
                 resizeMode="cover"
                 style={{ width: width * 0.6, height: height * 0.4 }}
-                className="border-8 border-white"
+                className="rounded-2xl overflow-hidden"
             />
         </TouchableWithoutFeedback>
     );

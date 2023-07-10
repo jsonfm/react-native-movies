@@ -9,7 +9,7 @@ const ios = Platform.OS == "ios";
 const Home = () => {
     return (
         <View className="flex-1 bg-neutral-800">
-            <SafeAreaView className="mt-8 px-4">
+            <SafeAreaView className="mt-12 mb-2 px-4">
                 <StatusBar animated={true} style="light" />
                 <View className="flex-row items-center justify-between ">
                     <TouchableOpacity>
@@ -25,8 +25,9 @@ const Home = () => {
             </SafeAreaView>
             <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 10 }}>
                 <TrendingMoviesCarousel movies={[1, 2, 3]} />
+                <MoviesList title={"Upcoming"} movies={[1, 2, 3]} />
+                <MoviesList title={"Top Rated"} movies={[1, 2, 3]} />
             </ScrollView>
-            <MoviesList />
         </View>
     );
 };
